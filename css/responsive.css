@@ -1,0 +1,326 @@
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* ===== TABLET LARGE (1200px) ===== */
+@media (max-width: 1200px) {
+    .container { max-width: 100%; padding: 0 30px; }
+    header .phonenum a.on { font-size: 20px; }
+    header .reservation a { padding: 12px 24px; font-size: 16px; }
+    header .gnb > li > a { font-size: 16px; padding: 16px 0; }
+    /* LNB full width 유지 */
+    header .lnb { padding: 28px 30px; }
+    header .lnb-inner ul li { min-width: 150px; }
+
+    .hero { height: 450px; }
+    .hero-textbox strong { font-size: 38px; }
+    .hero-textbox p { font-size: 17px; }
+
+    .board-grid { gap: 30px; }
+    .care-cards { gap: 24px; }
+    .care-card { width: auto; flex: 1; padding: 28px 18px 22px; }
+
+    .info-grid { gap: 24px; }
+    .info-card { padding: 36px; }
+
+    /* 태블릿: 진료안내/상담안내 배경 no-repeat */
+    .info-left { background: var(--bg-warm) no-repeat center / cover; }
+    .info-right { background: var(--bg-blue-lighter) no-repeat center / cover; }
+
+    .treatment-grid {
+        grid-template-columns: 200px 180px 140px 140px 180px;
+        grid-template-rows: 180px 150px 170px;
+        gap: 14px;
+    }
+    .treat-logo-text { font-size: 38px; }
+    .treat-logo-child { width: 82%; max-width: 200px; }
+    .treat-item strong { font-size: 20px; }
+    .treat-item p { font-size: 13px; }
+}
+
+/* ===== TABLET SMALL (1024px) ===== */
+@media (max-width: 1024px) {
+    /* Header */
+    header nav { display: none; }
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .mobile-menu-btn span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--primary-dark);
+        transition: var(--transition);
+    }
+    .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translateY(5px); }
+    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translateY(-5px); }
+
+    header .topset {
+        justify-content: center;
+        gap: 0;
+        position: relative;
+    }
+    header .phonenum { display: none; }
+    header .reservation { display: none; }
+    header .logo { margin: 0 auto; }
+
+    .hero { height: 400px; }
+    .hero-textbox strong { font-size: 32px; }
+    .hero-textbox p { font-size: 16px; }
+    .hero-arrows { padding: 0 16px; }
+
+    /* Board grid */
+    .board-grid { flex-direction: column; gap: 30px; }
+    .section1 { padding: 50px 0; }
+
+    /* Care cards */
+    .section2 { padding: 50px 0 70px; }
+    .section2-title { font-size: 22px; margin-bottom: 36px; }
+    .care-cards { flex-direction: column; align-items: center; gap: 20px; }
+    .care-card { width: 100%; max-width: 400px; }
+
+    /* Info grid */
+    .section3 { padding: 50px 0; }
+    .info-grid { flex-direction: column; gap: 20px; }
+    .info-card { border-radius: var(--radius-md); }
+    .info-left { background: var(--bg-warm) no-repeat center / cover !important; }
+    .info-right { background: var(--bg-blue-lighter) no-repeat center / cover !important; }
+
+    /* Treatment grid */
+    .section4 { padding: 50px 0 70px; }
+    .section4-title { font-size: 22px; margin-bottom: 30px; }
+    .treatment-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 14px;
+    }
+    /* 태블릿 순서 재배치 */
+    .treat-logo    { order: 1; }
+    .treat-accent1 { order: 2; }
+    .treat-img1    { order: 3; }
+    .treat-accent2 { order: 4; }
+    .treat-img2    { order: 5; }
+    .treat-accent3 { order: 6; }
+    .treat-highlight { order: 7; }
+    .treat-img3    { order: 8; }
+    .treat-cta     { order: 9; }
+
+    .treat-logo { grid-row: span 2; min-height: 280px; overflow: visible; }
+    .treat-logo-text { font-size: 36px; }
+    .treat-logo-child { width: 80%; max-width: 180px; }
+    .treat-img1 { grid-column: span 1; }
+    .treat-img2 { grid-column: span 1; }
+    .treat-img3 { grid-column: span 1; }
+    .treat-accent3 { grid-column: span 2; }
+    .treat-cta { grid-column: span 2; }
+    .treat-item strong { font-size: 18px; }
+
+    /* Footer */
+    .footer-inner { flex-direction: column; gap: 20px; }
+
+    /* About page */
+    .about-cards { flex-direction: column; }
+    .about-card { max-width: 100%; }
+    .about-headline h2 { font-size: 28px; }
+    .about-sub2 { font-size: 18px; }
+}
+
+/* ===== MOBILE (480px) ===== */
+@media (max-width: 480px) {
+    .container { padding: 0 16px; }
+
+    /* Header mobile */
+    header .topset { padding: 14px 0; }
+    header .logo img { height: 40px; }
+
+    /* Show floating btns */
+    .floating-btns { display: flex; }
+
+    /* ===== 히어로: 첫번째 배경 이미지 제거 (배경색만) ===== */
+    .hero { height: 320px; }
+    .hero-bg1 {
+        background: #e3f0fc !important;
+    }
+    .hero-textbox {
+        left: 5%;
+        right: 5%;
+    }
+    .hero-textbox strong {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .hero-textbox p {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+    .hero-cta { flex-direction: column; gap: 8px; }
+    .hero-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        justify-content: center;
+    }
+    .hero-arrows { display: none; }
+    .hero-dots { bottom: 14px; }
+    .dot { width: 8px; height: 8px; }
+    .dot.active { width: 24px; }
+
+    /* Section 1 */
+    .section1 { padding: 36px 0; }
+    .recent_board h2 { font-size: 17px; margin-bottom: 14px; padding-bottom: 10px; }
+    .recent_board ul li a { padding: 10px 0; font-size: 14px; }
+
+    /* ===== 카드메뉴 제목 3줄 중앙정렬 ===== */
+    .section2 { padding: 36px 0 50px; }
+    .section2-title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.8;
+        margin-bottom: 28px;
+        text-align: center;
+        word-break: keep-all;
+        color: var(--primary-dark);
+    }
+    /* 각 줄 블록으로 강제 줄바꿈 */
+    .section2-title .s2-line { display: block; }
+    .section2-title strong {
+        padding: 6px 20px;
+        font-size: 24px;
+        font-weight: 800;
+        display: inline-block;
+        margin: 4px auto;
+    }
+    .care-card { max-width: 100%; padding: 24px 16px 20px; }
+    .care-card-top p { font-size: 14px; }
+    .care-card-btn { font-size: 13px; padding: 10px 20px; }
+
+    /* Section 3 */
+    .section3 { padding: 36px 0; }
+    .info-card { padding: 28px 20px; }
+    .info-card h2 { font-size: 22px; margin-bottom: 20px; }
+    .info-table td { font-size: 14px; padding: 8px 0; }
+    .info-notes p { font-size: 13px; }
+    .contact-row { gap: 14px; flex-wrap: wrap; }
+    .contact-label { font-size: 14px; min-width: auto; letter-spacing: 1px; }
+    .contact-phone { font-size: 18px; }
+
+    /* ===== 진료과목 그리드 — Dream Eden 2행 차지, 빈칸 없이 배치 ===== */
+    .section4 { padding: 36px 0 50px; }
+    .section4-title { font-size: 19px; margin-bottom: 24px; }
+    .treatment-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(130px, auto);
+        gap: 10px;
+    }
+    .treat-item { padding: 20px 16px; min-height: 130px; }
+
+    /* 순서 재배치: img2를 accent3 앞으로 → 빈칸 제거 */
+    .treat-logo    { order: 1; }
+    .treat-accent1 { order: 2; }
+    .treat-img1    { order: 3; }
+    .treat-accent2 { order: 4; }
+    .treat-img2    { order: 5; }  /* ← accent3 앞으로 이동 */
+    .treat-accent3 { order: 6; }
+    .treat-highlight { order: 7; }
+    .treat-img3    { order: 8; }
+    .treat-cta     { order: 9; }
+
+    /* Dream Eden: 2행 차지, 크기 유지 + 아이 이미지 */
+    .treat-logo {
+        grid-row: span 2;
+        min-height: 270px;
+        overflow: visible;
+    }
+    .treat-logo-text { font-size: 28px; }
+    .treat-logo-child {
+        width: 80%;
+        max-width: 160px;
+        bottom: -8px;
+    }
+
+    /* 이미지 칸: span 해제 */
+    .treat-img1 { grid-column: span 1; min-height: 130px; }
+    .treat-img2 { grid-column: span 1; min-height: 130px; }
+    .treat-img3 { grid-column: span 1; min-height: 130px; }
+    .treat-img-placeholder .material-symbols-outlined { font-size: 44px; }
+
+    /* 불소도포 2열 */
+    .treat-accent3 { grid-column: span 2; }
+
+    /* CTA 카드 2열 */
+    .treat-cta {
+        grid-column: span 2;
+        flex-direction: row;
+        align-items: center;
+        min-height: auto;
+        padding: 24px 20px;
+    }
+    .treat-cta p strong { font-size: 18px; }
+    .treat-cta a { font-size: 12px; }
+
+    .treat-item strong { font-size: 16px; margin-bottom: 8px; }
+    .treat-item p { font-size: 12px; }
+
+    /* Footer */
+    #footer { padding: 28px 0; }
+    .footer-logo img { height: 30px; }
+    .footer-logo-text strong { font-size: 14px; }
+    .footer-info p { font-size: 11px; }
+
+    /* ===== 서브페이지 모바일 ===== */
+    .page-header { padding: 36px 0; }
+    .page-header h2 { font-size: 22px; }
+    .page-header p { font-size: 13px; }
+
+    /* 서브페이지 nav-tab: 단어 단위 줄바꿈 */
+    .sub-nav-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .sub-nav-tabs li { flex-shrink: 0; }
+    .sub-nav-tabs li a {
+        padding: 14px 16px;
+        font-size: 14px;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        white-space: nowrap;
+    }
+
+    .vision-section { padding: 50px 0 40px; }
+    .vision-title { font-size: 22px; }
+    .vision-quote { padding: 20px; }
+    .vision-quote p { font-size: 14px; }
+
+    .about-section { padding: 50px 0 80px; }
+    .about-sub1 { font-size: 20px; }
+    .about-headline h2 { font-size: 22px; }
+    .about-sub2 { font-size: 16px; }
+    .about-card-img { height: 180px; }
+    .about-card-body { padding: 20px; }
+    .about-card-body h3 { font-size: 16px; }
+    .about-card-body .num { font-size: 20px; }
+    .about-card-body p { font-size: 13px; }
+}
+
+/* ===== VERY SMALL (360px) ===== */
+@media (max-width: 360px) {
+    .hero { height: 280px; }
+    .hero-textbox strong { font-size: 20px; }
+    .hero-textbox p { font-size: 12px; }
+
+    /* Dream Eden 2행 유지 */
+    .treatment-grid { grid-template-columns: 1fr 1fr; }
+    .treat-logo { grid-row: span 2; min-height: 240px; overflow: visible; }
+    .treat-logo-text { font-size: 24px; }
+    .treat-logo-child { width: 78%; max-width: 130px; }
+    .treat-accent3 { grid-column: span 2; }
+    .treat-cta { grid-column: span 2; }
+}
